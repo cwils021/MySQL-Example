@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  mysql:
+    image: mysql:latest
+    ports:
+      - "${PORT}:3306"
+    command: mysqld --default-authentication-plugin=mysql_native_password
+    volumes:
+      - mySQL-Example-Data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      PORT: ${PORT}
+
+volumes:
+  mySQL-Example-Data:
