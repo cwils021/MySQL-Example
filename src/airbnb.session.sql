@@ -1,4 +1,3 @@
-
 -- @BLOCK create user table
 CREATE TABLE Users(
     id INT PRIMARY KEY AUTO_INCREMENT,

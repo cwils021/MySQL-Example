@@ -1,7 +1,14 @@
 version: "3.9"
 
 services:
-  mysql:
+  data-generator:
+    build: .
+    image: python_data_generator
+    container_name: mySQL_Example
+    depends_on:
+      - mysqldb
+
+  mysqldb:
     image: mysql:latest
     ports:
       - "${PORT}:3306"
